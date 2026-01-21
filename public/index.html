@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vulnerable Calendar App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📅 Calendar App</h1>
+      <p>Test app for security scanning</p>
+    </div>
+    
+    <div class="login-section" id="loginSection">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+    </div>
+    
+    <div class="main-content" id="mainContent" style="display:none;">
+      <div class="controls">
+        <h2>Add Event</h2>
+        <input type="text" id="eventTitle" placeholder="Event Title">
+        <textarea id="eventDescription" placeholder="Event Description"></textarea>
+        <input type="date" id="eventDate">
+        <button onclick="addEvent()">Add Event</button>
+      </div>
+      
+      <div class="calendar">
+        <div class="calendar-header">
+          <button onclick="previousMonth()">← Previous</button>
+          <h2 id="monthYear"></h2>
+          <button onclick="nextMonth()">Next →</button>
+        </div>
+        <div id="calendar"></div>
+      </div>
+      
+      <div class="events-list">
+        <h3>Your Events</h3>
+        <div id="eventsList"></div>
+      </div>
+      
+      <div class="admin-section">
+        <h3>Export</h3>
+        <button onclick="exportCSV()">Export to CSV</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
